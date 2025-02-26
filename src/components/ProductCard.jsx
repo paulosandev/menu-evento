@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import ProductModal from './ProductModal';
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product, onAddToCart }) => { // Recibe onAddToCart como prop
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedOptions, setSelectedOptions] = useState({});
 
@@ -10,12 +10,12 @@ const ProductCard = ({ product }) => {
         if (product.options.length > 0) {
             setIsModalOpen(true);
         } else {
-            handleAddToCart();
+            handleAddToCart(); // Llama a handleAddToCart (local) para productos no personalizables
         }
     };
 
     const handleAddToCart = () => {
-        console.log(`Producto "${product.name}" añadido al carrito con opciones:`, selectedOptions);
+        onAddToCart(product, selectedOptions); // Llama a la función onAddToCart que viene del padre (App.jsx)
         setIsModalOpen(false);
     };
 
@@ -71,7 +71,7 @@ const ProductCard = ({ product }) => {
                 onClose={handleModalClose}
                 product={product}
                 onOptionChange={handleOptionChange}
-                onAddToCart={handleAddToCart}
+                onAddToCart={handleAddToCart} // Pasa la función handleAddToCart (local) al modal
             />
         </div>
     );
