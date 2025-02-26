@@ -1,59 +1,11 @@
 export const productsData = [
     {
-        category: "Comida",
-        items: [
-            {
-                id: "ensalada_pollo",
-                name: "Ensalada de pollo",
-                price: 80,
-                image: "/images/ensalada_pollo.jpg",
-                description: "Deliciosa ensalada de pollo...",
-                options: [],
-            },
-            {
-                id: "sandwich_jamon_queso",
-                name: "Sandwich de jamón y queso",
-                price: 65,
-                image: "/images/sandwich_jamon_queso.jpg",
-                description: "Clásico sandwich de jamón y queso...",
-                options: [
-                    {
-                        groupName: "Extras",
-                        type: "checkbox",
-                        choices: [
-                            { name: "Mayonesa", value: "mayonesa", price: 5 },
-                            { name: "Pepino", value: "pepino", price: 3 },
-                        ],
-                    },
-                ],
-            },
-            {
-                id: "fruta_yogurt_granola",
-                name: "Fruta, yogurt griego y granola",
-                price: 75,
-                image: "/images/fruta_yogurt_granola.jpg",
-                description: "Saludable desayuno o snack...",
-                options: [
-                    {
-                        groupName: "Frutas Adicionales",
-                        type: "checkbox",
-                        choices: [
-                            { name: "Plátano", value: "platano", price: 2 },
-                            { name: "Fresa", value: "fresa", price: 4 },
-                        ],
-                    },
-                ],
-            },
-        ],
-    },
-    // ... (resto de las categorías: Postres, Café de especialidad, Otras bebidas) ..
-    {
         category: "Postres",
         items: [
             {
                 id: "rebanada_pastel",
                 name: "Rebanada de pastel",
-                price: 50,
+                price: 75, // Precio actualizado
                 image: "/images/rebanada_pastel.jpg",
                 description: "Rica rebanada de pastel...",
                 options: [
@@ -61,9 +13,26 @@ export const productsData = [
                         groupName: "Sabor",
                         type: "radio",
                         choices: [
-                            { name: "Chocolate con pistache", value: "chocolate_pistache", price: 55 },
-                            { name: "Zanahoria", value: "zanahoria", price: 50 },
-                            { name: "Dulce de leche con guayaba", value: "dulce_leche_guayaba", price: 52 },
+                            { name: "Chocolate con pistache", value: "chocolate_pistache", price: 75, image: "/images/pastel_chocolate_pistache.jpg" }, // Precio actualizado y image
+                            { name: "Zanahoria", value: "zanahoria", price: 75, image: "/images/pastel_zanahoria.jpg" }, // Precio actualizado y image
+                            { name: "Dulce de leche con guayaba", value: "dulce_leche_guayaba", price: 75, image: "/images/pastel_dulce_leche_guayaba.jpg" }, // Precio actualizado y image
+                        ],
+                    },
+                ],
+            },
+            {
+                id: "muffin",
+                name: "Muffin",
+                price: 35, // Precio actualizado
+                image: "/images/muffin.jpg", // Placeholder image - Replace with actual image if available
+                description: "Esponjoso muffin...",
+                options: [
+                    {
+                        groupName: "Sabor",
+                        type: "radio",
+                        choices: [
+                            { name: "Plátano con nutella", value: "platano_nutella", price: 35 }, // Precio actualizado
+                            { name: "Zanahoria", value: "zanahoria", price: 35 }, // Precio actualizado
                         ],
                     },
                 ],
@@ -71,7 +40,7 @@ export const productsData = [
             {
                 id: "cheesecake",
                 name: "Cheesecake",
-                price: 60,
+                price: 80, // Precio actualizado
                 image: "/images/cheesecake.jpg",
                 description: "Delicioso cheesecake...",
                 options: [
@@ -79,25 +48,25 @@ export const productsData = [
                         groupName: "Sabor",
                         type: "radio",
                         choices: [
-                            { name: "Galleta lotus", value: "galleta_lotus", price: 65 },
-                            { name: "Manzana", value: "manzana", price: 60 },
+                            { name: "Galleta lotus", value: "galleta_lotus", price: 80, image: "/images/cheesecake_lotus.jpg" }, // Precio actualizado y image
+                            { name: "Manzana", value: "manzana", price: 80, image: "/images/cheesecake_manzana.jpg" }, // Precio actualizado y image
                         ],
                     },
                 ],
             },
             {
-                id: "galletas",
-                name: "Galletas",
-                price: 25,
-                image: "/images/galletas.jpg",
-                description: "Variedad de galletas...",
+                id: "galletas_set",
+                name: "Galletas (set 4 mini galletas)",
+                price: 40, // Precio actualizado
+                image: "/images/galletas_set.jpg", // Placeholder image - Replace with actual image if available
+                description: "Set de 4 mini galletas...",
                 options: [
                     {
-                        groupName: "Tipo",
-                        type: "checkbox",
+                        groupName: "Sabores",
+                        type: "checkbox", // Changed to checkbox since it's a set
                         choices: [
-                            { name: "Chiapas de chocolate", value: "chiapas_chocolate", price: 25 },
-                            { name: "Coco, avena, chocolate y arándano", value: "coco_avena_chocolate_arandano", price: 28 },
+                            { name: "Chispas de chocolate", value: "chispas_chocolate", price: 40 }, // Precio actualizado
+                            { name: "Coco, avena, chocolate y arándano", value: "coco_avena_chocolate_arandano", price: 40 }, // Precio actualizado
                         ],
                     },
                 ],
@@ -108,62 +77,71 @@ export const productsData = [
         category: "Café de especialidad",
         items: [
             {
-                id: "latte",
-                name: "Latte",
-                price: 45,
-                image: "/images/latte.jpg",
-                description: "Clásico latte...",
+                id: "americano",
+                name: "Americano",
+                price: 40, // Precio actualizado
+                image: "/images/americano.jpg", // Placeholder image - Replace with actual image if available
+                description: "Espresso doble de café con agua...",
                 options: [
                     {
                         groupName: "Temperatura",
                         type: "radio",
                         choices: [
-                            { name: "Frío", value: "frio", price: 45 },
-                            { name: "Caliente", value: "caliente", price: 45 },
+                            { name: "Frío", value: "frio", price: 40 }, // Precio actualizado
+                            { name: "Caliente", value: "caliente", price: 40 }, // Precio actualizado
+                        ],
+                    },
+                ],
+            },
+            {
+                id: "latte",
+                name: "Latte",
+                price: 60, // Precio actualizado
+                image: "/images/latte.jpg", // Placeholder image - Replace with actual image if available
+                description: "Espresso doble de café con leche...",
+                options: [
+                    {
+                        groupName: "Temperatura",
+                        type: "radio",
+                        choices: [
+                            { name: "Frío", value: "frio", price: 60 }, // Precio actualizado
+                            { name: "Caliente", value: "caliente", price: 60 }, // Precio actualizado
                         ],
                     },
                     {
-                        groupName: "Sabor",
-                        type: "checkbox",
+                        groupName: "Saborizante (opcional +$5)",
+                        type: "radio",
                         choices: [
                             { name: "Avellana", value: "avellana", price: 5 },
                             { name: "Cajeta", value: "cajeta", price: 5 },
                             { name: "Caramelo", value: "caramelo", price: 5 },
                             { name: "Vainilla", value: "vainilla", price: 5 },
+                            { name: "Ninguno", value: "ninguno", price: 0 }, // Added "Ninguno" as an option
                         ],
                     },
                     {
                         groupName: "Leche",
                         type: "radio",
                         choices: [
-                            { name: "Leche entera", value: "entera", price: 45 },
-                            { name: "Leche deslactosada", value: "deslactosada", price: 48 },
-                            { name: "Leche de almendra", value: "almendra", price: 50 },
+                            { name: "Leche entera", value: "entera", price: 0 },
+                            { name: "Leche deslactosada", value: "deslactosada", price: 0 },
                         ],
                     },
                 ],
             },
             {
-                id: "americano",
-                name: "Americano",
-                price: 35,
-                image: "/images/americano.jpg",
-                description: "Café americano...",
-                options: [],
-            },
-            {
                 id: "chai",
                 name: "Chai",
-                price: 50,
-                image: "/images/chai.jpg",
-                description: "Chai...",
+                price: 60, // Precio actualizado
+                image: "/images/chai.jpg", // Placeholder image - Replace with actual image if available
+                description: "Bebida Chai...",
                 options: [
                     {
                         groupName: "Temperatura",
                         type: "radio",
                         choices: [
-                            { name: "Frío", value: "frio", price: 50 },
-                            { name: "Caliente", value: "caliente", price: 50 },
+                            { name: "Frío", value: "frio", price: 60 }, // Precio actualizado
+                            { name: "Caliente", value: "caliente", price: 60 }, // Precio actualizado
                         ],
                     },
                 ],
@@ -174,28 +152,32 @@ export const productsData = [
         category: "Otras bebidas",
         items: [
             {
-                id: "coca",
-                name: "Coca",
-                price: 20,
-                image: "/images/coca.jpg",
-                description: "Coca cola...",
-                options: [],
+                id: "coca_cola",
+                name: "Coca Cola",
+                price: 30, // Precio actualizado
+                image: "/images/coca_cola.jpg", // Placeholder image - Replace with actual image if available
+                description: "Coca Cola regular...",
             },
             {
-                id: "agua",
+                id: "coca_cola_light",
+                name: "Coca Cola Light",
+                price: 30, // Precio actualizado
+                image: "/images/coca_cola_light.jpg", // Placeholder image - Replace with actual image if available
+                description: "Coca Cola Light...",
+            },
+            {
+                id: "agua_botella",
                 name: "Botella de agua",
-                price: 15,
-                image: "/images/agua.jpg",
-                description: "Botella de agua...",
-                options: [],
+                price: 15, // Precio actualizado
+                image: "/images/agua_botella.jpg", // Placeholder image - Replace with actual image if available
+                description: "Botella de agua purificada...",
             },
             {
-                id: "limonada",
+                id: "limonada_natural",
                 name: "Limonada natural",
-                price: 30,
-                image: "/images/limonada.jpg",
-                description: "Limonada natural...",
-                options: [],
+                price: 45, // Precio actualizado
+                image: "/images/limonada_natural.jpg", // Placeholder image - Replace with actual image if available
+                description: "Limonada natural refrescante...",
             },
         ],
     },

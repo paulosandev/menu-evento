@@ -24,7 +24,12 @@ const CustomizationOptions = ({ options, onOptionChange }) => {
                                         className="form-radio h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300"
                                         onChange={(e) => onOptionChange(optionGroup.groupName, e.target.value, choice)}
                                     />
-                                    <label htmlFor={choice.value} className="ml-2 text-sm text-gray-700">{choice.name} {choice.price > 0 ? `(+ $${choice.price})` : ''}</label>
+                                    <label htmlFor={choice.value} className="ml-2 text-sm text-gray-700 flex items-center">
+                                        {choice.image && (
+                                            <img src={choice.image} alt={choice.name} className="h-8 w-8 rounded-full mr-2" /> // Muestra la imagen si existe
+                                        )}
+                                        <span>{choice.name} {choice.price > 0 ? `(+ $${choice.price})` : ''}</span>
+                                    </label>
                                 </div>
                             ))}
                         </div>
@@ -40,7 +45,12 @@ const CustomizationOptions = ({ options, onOptionChange }) => {
                                         className="form-checkbox h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
                                         onChange={(e) => onOptionChange(optionGroup.groupName, e.target.value, choice, e.target.checked)}
                                     />
-                                    <label htmlFor={choice.value} className="ml-2 text-sm text-gray-700">{choice.name} {choice.price > 0 ? `(+ $${choice.price})` : ''}</label>
+                                    <label htmlFor={choice.value} className="ml-2 text-sm text-gray-700 flex items-center">
+                                        {choice.image && (
+                                            <img src={choice.image} alt={choice.name} className="h-8 w-8 rounded-full mr-2" /> // Muestra la imagen si existe
+                                        )}
+                                        <span>{choice.name} {choice.price > 0 ? `(+ $${choice.price})` : ''}</span>
+                                    </label>
                                 </div>
                             ))}
                         </div>

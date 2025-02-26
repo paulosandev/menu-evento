@@ -1,8 +1,8 @@
 // src/components/ShoppingCart.jsx
 import React from 'react';
 
-const ShoppingCart = ({ cartItems, onRemoveFromCart, onUpdateQuantity, isOpen, onClose }) => { // Recibe isOpen y onClose
-    if (!isOpen) { // Si isOpen es false, no renderiza nada
+const ShoppingCart = ({ cartItems, onRemoveFromCart, onUpdateQuantity, isOpen, onClose, onCheckout }) => { // Recibe onCheckout
+    if (!isOpen) {
         return null;
     }
 
@@ -109,7 +109,7 @@ const ShoppingCart = ({ cartItems, onRemoveFromCart, onUpdateQuantity, isOpen, o
                         Total: ${total.toFixed(2)}
                     </div>
                     <div className="mt-4 flex justify-end">
-                        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        <button onClick={onCheckout} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"> {/* Llama a onCheckout al hacer click */}
                             Hacer pedido
                         </button>
                     </div>

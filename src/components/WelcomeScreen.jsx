@@ -3,11 +3,12 @@ import React from 'react';
 
 const WelcomeScreen = ({ onStartApp }) => {
     return (
-        <div className="bg-gray-50 min-h-screen flex flex-col justify-center items-center p-6">
-            <div className="mb-8">
-                <img src="public\images\app\logo.png" alt="logo"/>
-                <h1 className="text-3xl font-bold text-gray-800 mt-4 text-center">
-                    Bienvenido a Tochpan Café
+        <div className="bg-gray-50 min-h-screen flex flex-col justify-center items-center p-6 text-center"> {/* Añadido text-center para centrar texto */}
+            <div className="mb-8 max-w-sm"> {/* Añadido max-w-sm para limitar el ancho del logo en pantallas grandes */}
+                [Image of Logo de tu Cafetería Aquí - Reemplaza con tu Logo]
+                {/*  Aquí iría el logo de tu cafetería. Puedes usar un componente <img /> */}
+                <h1 className="text-3xl font-bold text-gray-800 mt-4">
+                    Bienvenido a [Nombre de tu Cafetería]
                 </h1>
             </div>
             <button
