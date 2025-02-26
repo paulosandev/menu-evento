@@ -133,6 +133,7 @@ function App() {
         isOpen={isOrderFormOpen}
         onClose={handleCloseOrderForm}
         onSubmit={handleOrderSubmit}
+        cartItems={cartItems} // **Pasa cartItems aquí**
       />
     </div>
   );
