@@ -44,8 +44,9 @@ const OrderForm = ({ isOpen, onClose, onSubmit, cartItems }) => {
             })
             .then(data => {
                 console.log('Pedido registrado exitosamente:', data);
-                alert('Gracias por tu pedido. Nos comunicaremos contigo para validar el método de pago');
-                onSubmit(orderDetails);
+                // QUITAMOS ESTE ALERT PARA EVITAR DUPLICACIÓN
+                // alert('Gracias por tu pedido. Nos comunicaremos contigo para validar el método de pago');
+                onSubmit(orderDetails); // App.jsx se encargará de mostrar la alerta
                 onClose();
             })
             .catch(error => {
