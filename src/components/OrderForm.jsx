@@ -26,7 +26,7 @@ const OrderForm = ({ isOpen, onClose, onSubmit, cartItems }) => {
         // Generamos un ID único para este pedido
         const orderIdempotencyKey = Date.now().toString() + '-' + Math.random().toString(36).substr(2, 9);
         
-        fetch('http://localhost:8000/api/orders', {
+        fetch('https://tt-services-staging.up.railway.app/api/orders', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
