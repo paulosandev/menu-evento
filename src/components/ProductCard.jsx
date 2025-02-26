@@ -1,8 +1,7 @@
-// src/components/ProductCard.jsx
 import React, { useState } from 'react';
 import ProductModal from './ProductModal';
 
-const ProductCard = ({ product, onAddToCart }) => { // Recibe onAddToCart como prop
+const ProductCard = ({ product, onAddToCart }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedOptions, setSelectedOptions] = useState({});
 
@@ -17,36 +16,41 @@ const ProductCard = ({ product, onAddToCart }) => { // Recibe onAddToCart como p
     const handleAddToCart = () => {
         onAddToCart(product, selectedOptions); // Llama a la función onAddToCart que viene del padre (App.jsx)
         setIsModalOpen(false);
+        setSelectedOptions({}); // Limpiar opciones después de añadir al carrito
     };
 
     const handleModalClose = () => {
         setIsModalOpen(false);
+        setSelectedOptions({}); // Limpiar opciones al cerrar el modal
     };
 
     const handleOptionChange = (groupName, optionValue, choice, isChecked) => {
         setSelectedOptions(prevOptions => {
             let updatedOptions = {...prevOptions};
-            if (choice.type === 'radio') {
-                updatedOptions[groupName] = { value: optionValue, price: choice.price };
-            } else if (choice.type === 'checkbox') {
+            
+            // Para opciones tipo radio
+            if (choice && choice.value !== undefined) {
+                updatedOptions[groupName] = { value: optionValue, price: choice.price || 0 };
+            } 
+            // Para opciones tipo checkbox
+            else if (isChecked !== undefined) {
+                if (!updatedOptions[groupName]) {
+                    updatedOptions[groupName] = [];
+                }
+                
                 if (isChecked) {
-                    if (!updatedOptions[groupName]) {
-                        updatedOptions[groupName] = [];
-                    }
-                    updatedOptions[groupName].push({ value: optionValue, price: choice.price });
+                    updatedOptions[groupName].push({ value: optionValue, price: choice.price || 0 });
                 } else {
-                    if (updatedOptions[groupName]) {
-                        updatedOptions[groupName] = updatedOptions[groupName].filter(opt => opt.value !== optionValue);
-                        if (updatedOptions[groupName].length === 0) {
-                            delete updatedOptions[groupName];
-                        }
+                    updatedOptions[groupName] = updatedOptions[groupName].filter(opt => opt.value !== optionValue);
+                    if (updatedOptions[groupName].length === 0) {
+                        delete updatedOptions[groupName];
                     }
                 }
             }
+            
             return updatedOptions;
         });
     };
-
 
     return (
         <div className="border rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow duration-200 flex flex-col h-full">
@@ -71,7 +75,7 @@ const ProductCard = ({ product, onAddToCart }) => { // Recibe onAddToCart como p
                 onClose={handleModalClose}
                 product={product}
                 onOptionChange={handleOptionChange}
-                onAddToCart={handleAddToCart} // Pasa la función handleAddToCart (local) al modal
+                onAddToCart={handleAddToCart}
             />
         </div>
     );

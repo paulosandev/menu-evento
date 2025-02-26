@@ -13,9 +13,9 @@ export const productsData = [
                             groupName: "Sabor",
                             type: "radio",
                             choices: [
-                                { name: "Chocolate con pistache", value: "chocolate_pistache", price: 75, image: "/images/pastel_chocolate_pistache.jpg" },
-                                { name: "Zanahoria", value: "zanahoria", price: 75, image: "/images/pastel_zanahoria.jpg" },
-                                { name: "Dulce de leche con guayaba", value: "dulce_leche_guayaba", price: 75, image: "/images/pastel_dulce_leche_guayaba.jpg" },
+                                { name: "Chocolate con pistache", value: "chocolate_pistache", price: 0, image: "/images/pastel_chocolate_pistache.jpg" },
+                                { name: "Zanahoria", value: "zanahoria", price: 0, image: "/images/pastel_zanahoria.jpg" },
+                                { name: "Dulce de leche con guayaba", value: "dulce_leche_guayaba", price: 0, image: "/images/pastel_dulce_leche_guayaba.jpg" },
                             ],
                         },
                     ],
@@ -31,8 +31,8 @@ export const productsData = [
                             groupName: "Sabor",
                             type: "radio",
                             choices: [
-                                { name: "Plátano con nutella", value: "platano_nutella", price: 35 },
-                                { name: "Zanahoria", value: "zanahoria", price: 35 },
+                                { name: "Plátano con nutella", value: "platano_nutella", price: 0 },
+                                { name: "Zanahoria", value: "zanahoria", price: 0 },
                             ],
                         },
                     ],
@@ -48,8 +48,8 @@ export const productsData = [
                             groupName: "Sabor",
                             type: "radio",
                             choices: [
-                                { name: "Galleta lotus", value: "galleta_lotus", price: 80, image: "/images/cheesecake_lotus.jpg" },
-                                { name: "Manzana", value: "manzana", price: 80, image: "/images/cheesecake_manzana.jpg" },
+                                { name: "Galleta lotus", value: "galleta_lotus", price: 0, image: "/images/cheesecake_lotus.jpg" },
+                                { name: "Manzana", value: "manzana", price: 0, image: "/images/cheesecake_manzana.jpg" },
                             ],
                         },
                     ],
@@ -63,10 +63,10 @@ export const productsData = [
                     options: [
                         {
                             groupName: "Sabores",
-                            type: "checkbox",
+                            type: "radio",
                             choices: [
-                                { name: "Chispas de chocolate", value: "chispas_chocolate", price: 40 },
-                                { name: "Coco, avena, chocolate y arándano", value: "coco_avena_chocolate_arandano", price: 40 },
+                                { name: "Chispas de chocolate", value: "chispas_chocolate", price: 0 },
+                                { name: "Coco, avena, chocolate y arándano", value: "coco_avena_chocolate_arandano", price: 0 },
                             ],
                         },
                     ],
@@ -87,8 +87,8 @@ export const productsData = [
                             groupName: "Temperatura",
                             type: "radio",
                             choices: [
-                                { name: "Frío", value: "frio", price: 40 },
-                                { name: "Caliente", value: "caliente", price: 40 },
+                                { name: "Frío", value: "frio", price: 0 },
+                                { name: "Caliente", value: "caliente", price: 0 },
                             ],
                         },
                     ],
@@ -104,8 +104,8 @@ export const productsData = [
                             groupName: "Temperatura",
                             type: "radio",
                             choices: [
-                                { name: "Frío", value: "frio", price: 60 },
-                                { name: "Caliente", value: "caliente", price: 60 },
+                                { name: "Frío", value: "frio", price: 0 },
+                                { name: "Caliente", value: "caliente", price: 0 },
                             ],
                         },
                         {
@@ -140,8 +140,8 @@ export const productsData = [
                             groupName: "Temperatura",
                             type: "radio",
                             choices: [
-                                { name: "Frío", value: "frio", price: 60 },
-                                { name: "Caliente", value: "caliente", price: 60 },
+                                { name: "Frío", value: "frio", price: 0 },
+                                { name: "Caliente", value: "caliente", price: 0 },
                             ],
                         },
                     ],

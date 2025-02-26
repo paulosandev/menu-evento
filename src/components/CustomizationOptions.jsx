@@ -1,4 +1,3 @@
-// src/components/CustomizationOptions.jsx
 import React, { useState, useEffect } from 'react';
 
 const CustomizationOptions = ({ product, onOptionChange, onAddToCart }) => {
@@ -7,9 +6,9 @@ const CustomizationOptions = ({ product, onOptionChange, onAddToCart }) => {
 
     useEffect(() => {
         // Verificar si product y product.options existen antes de continuar
-        if (!product || !product.options) { // **COMPROBACIÓN DE SEGURIDAD AÑADIDA**
-            setIsAddToCartEnabled(true); // Si no hay opciones, habilitar "Añadir al carrito" por defecto (o podrías deshabilitarlo, dependiendo de tu lógica)
-            return; // Salir del useEffect si product o product.options no están definidos
+        if (!product || !product.options) {
+            setIsAddToCartEnabled(true); // Si no hay opciones, habilitar "Añadir al carrito" por defecto
+            return;
         }
 
         // Verificar si todas las opciones obligatorias están seleccionadas
@@ -22,18 +21,20 @@ const CustomizationOptions = ({ product, onOptionChange, onAddToCart }) => {
             }
             return true;
         });
-        setIsAddToCartEnabled(areRequiredOptionsSelected); // **CORRECCIÓN IMPORTANTE: Usar 'areRequiredOptionsSelected' (nombre correcto de la variable)**
-    }, [selectedOptions, product]); // Dependencia cambiada a 'product' para re-verificar al cambiar de producto
+        setIsAddToCartEnabled(areRequiredOptionsSelected);
+    }, [selectedOptions, product]);
 
-
-    const handleOptionChangeLocal = (groupName, optionValue, choice, isChecked) => {
+    const handleOptionChangeLocal = (groupName, optionValue, choice, isChecked, optionType) => {
+        // Llamar a la función onOptionChange del componente padre
         onOptionChange(groupName, optionValue, choice, isChecked);
-        if (choice.type === 'radio') {
+        
+        // Actualizar el estado local según el tipo de opción
+        if (optionType === 'radio') {
             setSelectedOptions(prevOptions => ({
                 ...prevOptions,
                 [groupName]: optionValue
             }));
-        } else if (choice.type === 'checkbox') {
+        } else if (optionType === 'checkbox') {
             setSelectedOptions(prevOptions => {
                 const currentSelection = prevOptions[groupName] || [];
                 if (isChecked) {
@@ -45,18 +46,16 @@ const CustomizationOptions = ({ product, onOptionChange, onAddToCart }) => {
         }
     };
 
-
     const handleAddToCartClick = () => {
         onAddToCart(selectedOptions);
         setSelectedOptions({});
         setIsAddToCartEnabled(false);
     };
 
-
     return (
         <div className="mt-4 p-4 border rounded-md bg-gray-100">
             <h4 className="font-semibold mb-3 text-gray-700">Personalización:</h4>
-            {product && product.options && product.options.map((optionGroup, index) => ( // Comprobación aquí también para evitar errores si product o product.options son null
+            {product && product.options && product.options.map((optionGroup, index) => (
                 <div key={index} className="mb-3">
                     {optionGroup.groupName && <h5 className="font-medium text-gray-600 mb-2">{optionGroup.groupName}:</h5>}
                     {optionGroup.type === 'radio' && (
@@ -69,7 +68,7 @@ const CustomizationOptions = ({ product, onOptionChange, onAddToCart }) => {
                                         name={optionGroup.groupName}
                                         value={choice.value}
                                         className="form-radio h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300"
-                                        onChange={(e) => handleOptionChangeLocal(optionGroup.groupName, e.target.value, choice)}
+                                        onChange={(e) => handleOptionChangeLocal(optionGroup.groupName, e.target.value, choice, undefined, optionGroup.type)}
                                         checked={selectedOptions[optionGroup.groupName] === choice.value}
                                     />
                                     <label htmlFor={choice.value} className="ml-2 text-sm text-gray-700 flex items-center">
@@ -92,7 +91,7 @@ const CustomizationOptions = ({ product, onOptionChange, onAddToCart }) => {
                                         name={optionGroup.groupName}
                                         value={choice.value}
                                         className="form-checkbox h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
-                                        onChange={(e) => handleOptionChangeLocal(optionGroup.groupName, e.target.value, choice, e.target.checked)}
+                                        onChange={(e) => handleOptionChangeLocal(optionGroup.groupName, e.target.value, choice, e.target.checked, optionGroup.type)}
                                         checked={selectedOptions[optionGroup.groupName]?.includes(choice.value)}
                                     />
                                     <label htmlFor={choice.value} className="ml-2 text-sm text-gray-700 flex items-center">
