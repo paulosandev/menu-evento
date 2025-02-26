@@ -83,15 +83,20 @@ function App() {
         <WelcomeScreen onStartApp={handleStartApp} />
       ) : (
         <> {/* Fragment para agrupar elementos sin un div extra */}
-          <header className="bg-white shadow-md py-4 px-6 sm:px-8 lg:px-10">
+          <header className="bg-white shadow-md py-2 px-6 sm:px-6 lg:px-6">
             <div className="container mx-auto flex justify-between items-center">
-              <div className="font-bold text-xl text-gray-800">[Nombre de tu Cafetería]</div> {/* Nombre de la cafetería en el header */}
+              <div className="max-w-md">
+                <img
+                  src="public\images\app\logo.png"
+                  alt="logo tochpan"
+                  className="w-32"
+                />
+              </div>
               <button onClick={toggleCart} className="relative"> {/* Botón del carrito */}
-                [Image of Icono de Carrito Aquí - Reemplaza con tu Icono SVG o Icon Component]
-                {/*  Aquí iría tu icono de carrito SVG o component  */}
-                <svg className="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 3h2l.4 2.1m7.9-.1l-.3 1m6.4 7h-13m18-3v-1.4a.5.5 0 00-.1-.3L19 5a.5.5 0 00-.5-.5H4.5a.5.5 0 00-.5.5L3 12l1.5 7a.5.5 0 00 .5.5H18a.5.5 0 00 .5-.5V13m0 0v-3.5m0 0h-1l-1-5m-5 5v-3.5m0 0h-1l-1-5m-5 5v-3.5m0 0h-1l-1-5" />
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
                 </svg>
+
                 {cartItems.length > 0 && (
                   <span className="absolute top-[-5px] right-[-5px] bg-red-500 text-white text-xs rounded-full px-2 py-0.5">
                     {cartItems.length}
