@@ -6,7 +6,7 @@ const WelcomeScreen = ({ onStartApp }) => {
         <div className="bg-gray-50 min-h-screen flex flex-col justify-center items-center p-6">
             <div className="mb-8 max-w-md">
                 <img
-                    src="public\images\app\logo.png"
+                    src="images\app\logo.png"
                     alt="logo tochpan"
                     className="w-full h-auto"
                 />

@@ -33,7 +33,7 @@ const OrderForm = ({ isOpen, onClose, onSubmit, cartItems }) => { // Recibe cart
             })
             .then(data => {
                 console.log('Pedido registrado exitosamente:', data);
-                alert('¡Pedido confirmado! Gracias por tu compra.');
+                alert(' Gracias por tu pedido. Nos comunicaremos contigo para validar el metodo de pago');
                 onSubmit(orderDetails); // Llama a la función onSubmit para limpiar el carrito en App.jsx
                 onClose(); // Cierra el formulario
             })
@@ -94,7 +94,7 @@ const OrderForm = ({ isOpen, onClose, onSubmit, cartItems }) => { // Recibe cart
 
                     <div> {/*  AQUI REINTRODUCIMOS EL PÁRRAFO DE LA NOTA INFORMATIVA */}
                         <p className="text-sm text-gray-700">
-                            **Nota:** Tu comida estará lista en la hora de receso, las bebidas serán preparadas al momento.
+                            **Nota:** Tu comida estará lista en la hora de receso, las bebidas serán preparadas al momento. Despues de recibir tu pedido, nos comunicaremos contigo para validar el metodo de pago.
                         </p>
                     </div>
 

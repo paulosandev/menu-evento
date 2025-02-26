@@ -13,8 +13,8 @@ export const productsData = [
                             groupName: "Sabor",
                             type: "radio",
                             choices: [
-                                { name: "Chocolate con pistache", value: "chocolate_pistache", price: 0, image: "/images/pastel_chocolate_pistache.jpg" },
-                                { name: "Zanahoria", value: "zanahoria", price: 0, image: "/images/pastel_zanahoria.jpg" },
+                                { name: "Chocolate con pistache", value: "chocolate_pistache", price: 0, image: "/images/pastel_chocolate_pistache.jpeg" },
+                                { name: "Zanahoria", value: "zanahoria", price: 0, image: "/images/pastel_zanahoria.jpeg" },
                                 { name: "Dulce de leche con guayaba", value: "dulce_leche_guayaba", price: 0, image: "/images/pastel_dulce_leche_guayaba.jpg" },
                             ],
                         },
@@ -48,7 +48,7 @@ export const productsData = [
                             groupName: "Sabor",
                             type: "radio",
                             choices: [
-                                { name: "Galleta lotus", value: "galleta_lotus", price: 0, image: "/images/cheesecake_lotus.jpg" },
+                                { name: "Galleta lotus", value: "galleta_lotus", price: 0, image: "/images/cheesecake_lotus.jpeg" },
                                 { name: "Manzana", value: "manzana", price: 0, image: "/images/cheesecake_manzana.jpg" },
                             ],
                         },
@@ -155,7 +155,7 @@ export const productsData = [
                     id: "coca_cola",
                     name: "Coca Cola",
                     price: 30,
-                    image: "/images/coca_cola.jpg",
+                    image: "/images/coca.jpg",
                     description: "Coca Cola regular...",
                 },
                 {
@@ -169,14 +169,14 @@ export const productsData = [
                     id: "agua_botella",
                     name: "Botella de agua",
                     price: 15,
-                    image: "/images/agua_botella.jpg",
+                    image: "/images/agua.jpg",
                     description: "Botella de agua purificada...",
                 },
                 {
                     id: "limonada_natural",
                     name: "Limonada natural",
                     price: 45,
-                    image: "/images/limonada_natural.jpg",
+                    image: "/images/limonada.jpg",
                     description: "Limonada natural refrescante...",
                 },
             ],
@@ -195,7 +195,7 @@ export const productsData = [
                     id: "sandwich_jamon_queso",
                     name: "Sandwich de jamón y queso",
                     price: 40,
-                    image: "/images/sandwich_jamon_queso.jpg", // Placeholder image
+                    image: "/images/sandwich_jamon_queso.jpeg", // Placeholder image
                     description: "Clásico sandwich de jamón y queso con mayonesa..."
                 },
                 {
@@ -209,7 +209,7 @@ export const productsData = [
                     id: "flautas_pollo",
                     name: "3 flautas de pollo",
                     price: 60,
-                    image: "/images/flautas_pollo.jpg", // Placeholder image
+                    image: "/images/flautas_pollo.jpeg", // Placeholder image
                     description: "Deliciosas 3 flautas de pollo con queso y salsa de tomate..."
                 }
             ]
