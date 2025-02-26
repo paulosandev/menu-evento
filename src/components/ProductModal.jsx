@@ -20,8 +20,9 @@ const ProductModal = ({ isOpen, onClose, product, onOptionChange, onAddToCart })
                 </div>
 
                 <CustomizationOptions
-                    options={product.options}
+                    product={product} // **CORRECCIÓN: Pasar la prop 'product' completa**
                     onOptionChange={onOptionChange}
+                    onAddToCart={onAddToCart} // Pass onAddToCart to CustomizationOptions
                 />
 
                 <div className="mt-6 flex justify-end space-x-4">
@@ -31,12 +32,7 @@ const ProductModal = ({ isOpen, onClose, product, onOptionChange, onAddToCart })
                     >
                         Cancelar
                     </button>
-                    <button
-                        onClick={onAddToCart}
-                        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-                    >
-                        Añadir al Carrito
-                    </button>
+                    {/* The "Añadir al Carrito" button is now in CustomizationOptions.jsx */}
                 </div>
             </div>
         </div>
