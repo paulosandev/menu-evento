@@ -7,7 +7,7 @@ const ProductCard = ({ product, onAddToCart }) => { // Recibe onAddToCart como p
     const [selectedOptions, setSelectedOptions] = useState({});
 
     const handleAddToCartButton = () => {
-        if (product.options.length > 0) {
+        if (product.options?.length > 0) {
             setIsModalOpen(true);
         } else {
             handleAddToCart(); // Llama a handleAddToCart (local) para productos no personalizables
@@ -54,8 +54,8 @@ const ProductCard = ({ product, onAddToCart }) => { // Recibe onAddToCart como p
             <div className="flex-grow">
                 <h3 className="font-semibold text-lg sm:text-xl mb-1 sm:mb-2">{product.name}</h3>
                 <p className="text-gray-600 text-sm sm:text-base mb-2 sm:mb-3">{product.description}</p>
-                <p className="font-bold text-base sm:text-lg">Precio: ${product.price.toFixed(2)}</p>
-                {product.options.length > 0 && (
+                <p className="font-bold text-base sm:text-lg">Precio: ${product.price}</p>
+                {product.options?.length > 0 && (
                     <p className="text-sm text-gray-500 mt-1 sm:mt-2">Personalizable</p>
                 )}
             </div>
