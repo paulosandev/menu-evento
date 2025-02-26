@@ -17,8 +17,8 @@ function App() {
     };
 
     return (
-        <div className="bg-gray-50 min-h-screen"> {/* Añadido un color de fondo a toda la página y altura mínima */}
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10"> {/* Ajuste de padding responsivo y centrado */}
+        <div className="bg-gray-50 min-h-screen">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10">
                 <header className="text-center mb-6 sm:mb-8">
                     <h1 className="text-3xl sm:text-4xl font-bold text-gray-800">Pedidos Cafetería</h1>
                     <p className="text-gray-600 mt-2 sm:mt-3">¡Elige tus favoritos!</p>

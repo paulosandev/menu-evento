@@ -3,7 +3,7 @@ import React from 'react';
 
 const CategoryTabs = ({ categories, activeCategory, onCategoryChange }) => {
     return (
-        <div className="flex overflow-x-auto sm:justify-center space-x-2 sm:space-x-4 mb-4"> {/* Flex horizontal en movil, centrado en pantallas mayores */}
+        <div className="flex overflow-x-auto sm:justify-center space-x-2 sm:space-x-4 mb-4">
             {categories.map((category) => (
                 <button
                     key={category}

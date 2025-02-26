@@ -6,7 +6,7 @@ export const productsData = [
                 id: "ensalada_pollo",
                 name: "Ensalada de pollo",
                 price: 80,
-                image: "/images/ensalada_pollo.jpg", // Placeholder para la imagen
+                image: "/images/ensalada_pollo.jpg",
                 description: "Deliciosa ensalada de pollo...",
                 options: [],
             },
@@ -14,26 +14,39 @@ export const productsData = [
                 id: "sandwich_jamon_queso",
                 name: "Sandwich de jamón y queso",
                 price: 65,
-                image: "/images/sandwich_jamon_queso.jpg", // Placeholder para la imagen
+                image: "/images/sandwich_jamon_queso.jpg",
                 description: "Clásico sandwich de jamón y queso...",
                 options: [
-                    { name: "Mayonesa", type: "checkbox", price: 5 },
-                    { name: "Pepino", type: "checkbox", price: 3 },
+                    {
+                        groupName: "Extras",
+                        type: "checkbox",
+                        choices: [
+                            { name: "Mayonesa", value: "mayonesa", price: 5 },
+                            { name: "Pepino", value: "pepino", price: 3 },
+                        ],
+                    },
                 ],
             },
             {
                 id: "fruta_yogurt_granola",
                 name: "Fruta, yogurt griego y granola",
                 price: 75,
-                image: "/images/fruta_yogurt_granola.jpg", // Placeholder para la imagen
+                image: "/images/fruta_yogurt_granola.jpg",
                 description: "Saludable desayuno o snack...",
                 options: [
-                    { name: "Plátano", type: "checkbox", price: 2 },
-                    { name: "Fresa", type: "checkbox", price: 4 },
+                    {
+                        groupName: "Frutas Adicionales",
+                        type: "checkbox",
+                        choices: [
+                            { name: "Plátano", value: "platano", price: 2 },
+                            { name: "Fresa", value: "fresa", price: 4 },
+                        ],
+                    },
                 ],
             },
         ],
     },
+    // ... (resto de las categorías: Postres, Café de especialidad, Otras bebidas) ..
     {
         category: "Postres",
         items: [
@@ -41,7 +54,7 @@ export const productsData = [
                 id: "rebanada_pastel",
                 name: "Rebanada de pastel",
                 price: 50,
-                image: "/images/rebanada_pastel.jpg", // Placeholder para la imagen
+                image: "/images/rebanada_pastel.jpg",
                 description: "Rica rebanada de pastel...",
                 options: [
                     {
@@ -59,7 +72,7 @@ export const productsData = [
                 id: "cheesecake",
                 name: "Cheesecake",
                 price: 60,
-                image: "/images/cheesecake.jpg", // Placeholder para la imagen
+                image: "/images/cheesecake.jpg",
                 description: "Delicioso cheesecake...",
                 options: [
                     {
@@ -76,7 +89,7 @@ export const productsData = [
                 id: "galletas",
                 name: "Galletas",
                 price: 25,
-                image: "/images/galletas.jpg", // Placeholder para la imagen
+                image: "/images/galletas.jpg",
                 description: "Variedad de galletas...",
                 options: [
                     {
@@ -98,7 +111,7 @@ export const productsData = [
                 id: "latte",
                 name: "Latte",
                 price: 45,
-                image: "/images/latte.jpg", // Placeholder para la imagen
+                image: "/images/latte.jpg",
                 description: "Clásico latte...",
                 options: [
                     {
@@ -134,7 +147,7 @@ export const productsData = [
                 id: "americano",
                 name: "Americano",
                 price: 35,
-                image: "/images/americano.jpg", // Placeholder para la imagen
+                image: "/images/americano.jpg",
                 description: "Café americano...",
                 options: [],
             },
@@ -142,7 +155,7 @@ export const productsData = [
                 id: "chai",
                 name: "Chai",
                 price: 50,
-                image: "/images/chai.jpg", // Placeholder para la imagen
+                image: "/images/chai.jpg",
                 description: "Chai...",
                 options: [
                     {
@@ -164,7 +177,7 @@ export const productsData = [
                 id: "coca",
                 name: "Coca",
                 price: 20,
-                image: "/images/coca.jpg", // Placeholder para la imagen
+                image: "/images/coca.jpg",
                 description: "Coca cola...",
                 options: [],
             },
@@ -172,7 +185,7 @@ export const productsData = [
                 id: "agua",
                 name: "Botella de agua",
                 price: 15,
-                image: "/images/agua.jpg", // Placeholder para la imagen
+                image: "/images/agua.jpg",
                 description: "Botella de agua...",
                 options: [],
             },
@@ -180,7 +193,7 @@ export const productsData = [
                 id: "limonada",
                 name: "Limonada natural",
                 price: 30,
-                image: "/images/limonada.jpg", // Placeholder para la imagen
+                image: "/images/limonada.jpg",
                 description: "Limonada natural...",
                 options: [],
             },

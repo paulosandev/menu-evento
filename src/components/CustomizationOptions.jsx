@@ -3,7 +3,7 @@ import React from 'react';
 
 const CustomizationOptions = ({ options, onOptionChange }) => {
     if (!options || options.length === 0) {
-        return null; // No renderizar si no hay opciones
+        return null;
     }
 
     return (
